@@ -35,3 +35,9 @@ inspiration
 -----------
 
 [hint.fm wind map](http://hint.fm/wind/) and [Cameron Beccario](https://github.com/cambecc)
+
+
+credit
+------
+
+windy.jsindy.js created by [wind-js] (https://github.com/Esri/wind-js) 
