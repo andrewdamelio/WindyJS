@@ -40,4 +40,4 @@ inspiration
 credit
 ------
 
-windy.jsindy.js created by [wind-js] (https://github.com/Esri/wind-js) 
+windy.js created by [wind-js] (https://github.com/Esri/wind-js) 
