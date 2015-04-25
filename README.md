@@ -1,5 +1,5 @@
 # Breeze JS
-Wind Map ambitions
+Wind Map ambitions -> [Demo](http://andrewdamel.io/dev/wind/index.html)
 
 
 
