@@ -1,0 +1,28 @@
+{
+  "name": "WindyJS",
+  "version": "0.0.1",
+  "homepage": "https://github.com/andrewdamelio/WindyJS",
+  "authors": [
+    "andrewdamelio <dev@andrewdamel.io>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper": "~0.9.22",
+    "jquery": "~2.1.4",
+    "d3": "~3.5.5",
+    "ramda": "~0.13.0",
+    "skeleton": "~2.0.4",
+    "topojson": "~1.6.19",
+    "moment": "~2.10.2"
+  }
+}

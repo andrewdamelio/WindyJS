@@ -1,0 +1,82 @@
+
+#map_SVG {
+  z-index:1;
+  width: 960px;
+  height:720px;
+  position: absolute;
+}
+
+#canvas {
+  z-index:2;
+  width: 960px;
+  height:720px;
+  position: absolute;
+  background: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*.subunit.CAN { fill: #FA8072; }*/
+.subunit.CAN { fill: #DCDCDC; }
+
+.fill-tomato {
+  fill: 'red';
+}
+
+.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.button {
+  width: 140px;
+}
+
+.options {
+  width: 60px;
+}
+
+.title {
+  font-size: 3rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.main {
+  float:right;
+  padding-right:100px;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 250px;
+}
+
+.help-text {
+  font-size: 1.3rem;
+  font-family:  monospace;
+}
+
+.is-disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 1350px) {
+    .main {
+      float: none;
+      position: absolute;
+      top: 750px;
+      padding: 100px;
+    }
+}
