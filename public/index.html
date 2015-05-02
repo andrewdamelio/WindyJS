@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="bower_components/skeleton/css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+  <svg class="noselect" id="map_SVG"></svg>
+
+  <canvas id="canvas"></canvas>
+
+  <div class='main'>
+    <p class='title'>WindyJS</p>
+    <p class="help-text">
+
+      <strong>Wind Path Map</strong>: display wind paths
+      <br />(default: 1000 paths)<br/><br />
+
+      <div id="wind-path">
+        <div class="button">Wind Path</div>
+        <input type="number"
+               class="options"
+               id="wind-path-value"
+               placeholder="1000"/>
+        <br/>
+      </div>
+    </p>
+
+    <p class="help-text">
+      <strong>Wind Flow Map</strong>: animate wind paths
+      <br />(default: 175 paths)<br/><br />
+
+      <div id="wind-flow">
+        <div class="button">Wind Flow</div>
+        <input type="number"
+               class="options"
+               id="wind-flow-value"
+               placeholder="175"/>
+      </div>
+    </p>
+
+    <p class="help-text">
+      <br/>*Click map to change color
+    </p>
+
+    <hr>
+    <p><strong>Data Source</strong></p>
+    <font size="2px"><div class="wind-date"></div></font></br>
+    <a target="_blank" href="http://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_1p00.pl">US National Weather Service - NCEP(WMC)</a>
+
+    <hr>
+    <strong>Built With:</strong> D3.js and PaperJS
+
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/d3/d3.js"></script>
+  <script src="bower_components/topojson/topojson.js"></script>
+  <script src="bower_components/ramda/dist/ramda.js"></script>
+  <script src="bower_components/paper/dist/paper-full.js"></script>
+  <script src='bower_components/moment/moment.js'></script>
+  <script src="windy.js"></script>
+  <script src="app.js"></script>
+</body>

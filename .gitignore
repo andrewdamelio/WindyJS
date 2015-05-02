@@ -1,0 +1,29 @@
+# Ignore compiled CSS
+#public/styles/main.css
+
+# Ignore build directory
+public/dist/
+
+# Ignore dist folder
+dist/
+
+# Ignore node modules
+node_modules/
+
+# Ignore Bower-installed files
+public/bower/
+bower_components/
+
+# Ignore .DS_Store files
+**/.DS_Store
+
+# Ignore emacs temporary files
+**~
+**/#*#
+**/.#*
+
+# Ignore webstorm project files
+.idea
+
+#ignore private configuration
+.private/
