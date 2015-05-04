@@ -1,7 +1,7 @@
 # WindyJS
 Attemping to build a Wind Map  - Work in progress
 
-[Demo](http://104.131.39.189:8080)
+[Demo](http://wind.graphics)
 
 
 building and launching
