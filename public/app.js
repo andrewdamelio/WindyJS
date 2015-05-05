@@ -26,6 +26,22 @@ var context;
 var windyData;
 var windJSON;
 
+var mapLoading = false;
+
+
+function handleUnSelection() {
+  $('#wind-path .button').removeClass('is-disabled');
+  $('#wind-path .options').removeClass('is-disabled');
+  $('#wind-flow .button').removeClass('is-disabled');
+  $('#wind-flow .options').removeClass('is-disabled');
+}
+
+function handleSelection() {
+  $('#wind-path .button').addClass('is-disabled', true);
+  $('#wind-path .options').addClass('is-disabled', true);
+  $('#wind-flow .button').addClass('is-disabled', true);
+  $('#wind-flow .options').addClass('is-disabled', true);
+}
 
 /**
  * [getNextCord]
@@ -143,13 +159,6 @@ function generateWindPath(x, y, resolution) {
  */
 function createWindPaths(drawPaths, quantity, resolution) {
 
-  for (var i = 0; i < quantity; i++) {
-    drawWindPaths(drawPaths, resolution);
-  }
-  paper.view.draw();
-  handleUnSelection()
-
-
   function drawWindPaths(drawPaths, resolution) {
 
     var path = new paper.Path();
@@ -234,6 +243,13 @@ function createWindPaths(drawPaths, quantity, resolution) {
       };
     }
   }
+
+  for (var i = 0; i < quantity; i++) {
+    drawWindPaths(drawPaths, resolution);
+  }
+  paper.view.draw();
+  handleUnSelection();
+
 }
 
 // D3 - Draw map of Canada along with cities
@@ -280,20 +296,6 @@ function createWindPaths(drawPaths, quantity, resolution) {
 })();
 
 
-function handleUnSelection() {
-  $('#wind-path .button').removeClass('is-disabled');
-  $('#wind-path .options').removeClass('is-disabled');
-  $('#wind-flow .button').removeClass('is-disabled');
-  $('#wind-flow .options').removeClass('is-disabled');
-}
-
-function handleSelection() {
-  $('#wind-path .button').addClass('is-disabled', true);
-  $('#wind-path .options').addClass('is-disabled', true);
-  $('#wind-flow .button').addClass('is-disabled', true);
-  $('#wind-flow .options').addClass('is-disabled', true);
-}
-
 // Main
 $(document).ready(function () {
 
@@ -334,7 +336,7 @@ $(document).ready(function () {
         option = 1000;
       }
       $('#wind-path')[0].value = option;
-      paper.clear()
+      paper.clear();
 
       paper.setup(canvas);
 
@@ -342,7 +344,6 @@ $(document).ready(function () {
       setTimeout(function () {
         createWindPaths(true, option, 500);
       }, 1000);
-
     });
 
     $('#wind-flow .button').on('click', function () {
@@ -351,7 +352,7 @@ $(document).ready(function () {
         option = 175;
       }
       $('#wind-flow')[0].value = option;
-      paper.clear()
+      paper.clear();
 
       paper.setup(canvas);
 
@@ -359,6 +360,7 @@ $(document).ready(function () {
       setTimeout(function () {
         createWindPaths(false, option, 150);
       }, 1000);
+
     });
   });
 });
