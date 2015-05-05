@@ -1,5 +1,6 @@
 # WindyJS
 Attemping to build a Wind Map  - Work in progress
+![wind map](http://i.imgur.com/sCWdtqf.png?1)
 
 [Demo](http://wind.graphics)
 
