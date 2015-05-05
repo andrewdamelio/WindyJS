@@ -1,4 +1,8 @@
 
+p {
+  margin: 15px;
+}
+
 #map_SVG {
   z-index:1;
   width: 960px;
