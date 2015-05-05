@@ -26,13 +26,6 @@ var context;
 var windyData;
 var windJSON;
 
-/**
- * [resetCanvas - clears canvas]
- * @param  {[context]} [canvas to clear]
- */
-function resetCanvas(context) {
-  context.clearRect(0, 0, 960, 720);
-}
 
 /**
  * [getNextCord]
@@ -148,13 +141,14 @@ function generateWindPath(x, y, resolution) {
  * @param  {[type]} quantity   [the amount of paths to draw]
  * @param  {[type]} resolution [the total number of segments within a path]
  */
-function createWindPaths(drawPaths, quantity, resolution, cb) {
+function createWindPaths(drawPaths, quantity, resolution) {
 
   for (var i = 0; i < quantity; i++) {
     drawWindPaths(drawPaths, resolution);
   }
-  //cb();
   paper.view.draw();
+  handleUnSelection()
+
 
   function drawWindPaths(drawPaths, resolution) {
 
@@ -286,27 +280,24 @@ function createWindPaths(drawPaths, quantity, resolution, cb) {
 })();
 
 
+function handleUnSelection() {
+  $('#wind-path .button').removeClass('is-disabled');
+  $('#wind-path .options').removeClass('is-disabled');
+  $('#wind-flow .button').removeClass('is-disabled');
+  $('#wind-flow .options').removeClass('is-disabled');
+}
+
+function handleSelection() {
+  $('#wind-path .button').addClass('is-disabled', true);
+  $('#wind-path .options').addClass('is-disabled', true);
+  $('#wind-flow .button').addClass('is-disabled', true);
+  $('#wind-flow .options').addClass('is-disabled', true);
+}
+
 // Main
 $(document).ready(function () {
 
-  function handleUnSelection() {
-    $('#wind-path .button').removeClass('is-disabled');
-    $('#wind-path .options').removeClass('is-disabled');
-    $('#wind-flow .button').removeClass('is-disabled');
-    $('#wind-flow .options').removeClass('is-disabled');
-  }
-  function handleSelection() {
-    resetCanvas(context);
-    $('#wind-path .button').addClass('is-disabled', true);
-    $('#wind-path .options').addClass('is-disabled', true);
-    $('#wind-flow .button').addClass('is-disabled', true);
-    $('#wind-flow .options').addClass('is-disabled', true);
-  }
 
-  // Roload the page when title is clicked
-  $('.title').on('click', function () {
-    location.reload();
-  });
 
   // Change color of map when clicked
   $('#canvas').on('click', function () {
@@ -343,11 +334,13 @@ $(document).ready(function () {
         option = 1000;
       }
       $('#wind-path')[0].value = option;
+      paper.clear()
+
       paper.setup(canvas);
 
       handleSelection();
       setTimeout(function () {
-        createWindPaths(true, option, 500, handleUnSelection);
+        createWindPaths(true, option, 500);
       }, 1000);
 
     });
@@ -358,14 +351,14 @@ $(document).ready(function () {
         option = 175;
       }
       $('#wind-flow')[0].value = option;
+      paper.clear()
+
       paper.setup(canvas);
 
       handleSelection();
       setTimeout(function () {
-        createWindPaths(false, option, 150, handleUnSelection);
+        createWindPaths(false, option, 150);
       }, 1000);
     });
   });
 });
-
-
