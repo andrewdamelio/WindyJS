@@ -23,6 +23,7 @@
     "ramda": "~0.13.0",
     "skeleton": "~2.0.4",
     "topojson": "~1.6.19",
-    "moment": "~2.10.2"
+    "moment": "~2.10.2",
+    "font-awesome": "~4.3.0"
   }
 }
