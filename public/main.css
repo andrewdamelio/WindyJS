@@ -1,8 +1,3 @@
-
-p {
-  margin: 15px;
-}
-
 #map_SVG {
   z-index:1;
   width: 960px;
@@ -26,7 +21,7 @@ p {
   -ms-user-select: none;
   user-select: none;
 }
-/*.subunit.CAN { fill: #FA8072; }*/
+
 .subunit.CAN { fill: #DCDCDC; }
 
 .fill-tomato {
@@ -57,14 +52,6 @@ p {
   margin-top: 10px;
 }
 
-.main {
-  float:right;
-  padding-right:100px;
-  font-size: 1.5rem;
-  text-align: center;
-  width: 250px;
-}
-
 .help-text {
   font-size: 1.3rem;
   font-family:  monospace;
@@ -75,11 +62,70 @@ p {
     pointer-events: none;
 }
 
+.scroll-down {
+  animation: MoveUpDown 1s linear infinite;
+  position: absolute;
+  right: 100px;
+  top: 0;
+  display: none;
+  color: #dcdcdc;
+  font-size: 3rem;
+}
+
+@keyframes MoveUpDown {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 100px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 @media screen and (max-width: 1350px) {
     .main {
       float: none;
       position: absolute;
       top: 750px;
-      padding: 100px;
+      display: flex;
+      width: 100vw;
+      text-align: center;
+      margin: 0;
+      padding: 0;
     }
+
+    .main-group {
+      max-width: 25%;
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      font-size: 1em;
+    }
+
+    .scroll-down {
+      display: block;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+  .main {
+    float:right;
+    padding:2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .main-group {
+    display: flex;
+    flex-direction: column;
+  }
 }
